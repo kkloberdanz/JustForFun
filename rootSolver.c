@@ -1,3 +1,7 @@
+/*
+ * Programmer: Kyle Kloberdanz
+ */
+
 #include <stdio.h>
 
 double absoluteValue( double input ){
