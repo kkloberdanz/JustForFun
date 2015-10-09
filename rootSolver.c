@@ -1,5 +1,8 @@
 /*
  * Programmer: Kyle Kloberdanz
+ * 
+ * This program is an exercise in computing roots without
+ * including math.h
  */
 
 #include <stdio.h>
