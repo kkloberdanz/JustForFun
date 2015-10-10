@@ -11,6 +11,7 @@ def sciNotation( dec ):
 
     # For positive integers
     if (dec > 0) and (int(dec) == dec):
+        dec = int(dec)
         mantissa = ""
         while dec >= 10:
             mantissa = str(dec%10) + mantissa 
@@ -19,14 +20,14 @@ def sciNotation( dec ):
 
     # For negative integers
     elif (dec < 0) and (int(dec) == dec):
-        dec = abs(dec)
+        dec = int(abs(dec))
         mantissa = ""
         while dec >= 10:
             mantissa = str(dec%10) + mantissa 
             dec = dec // 10
         return "-"+str(dec)+"."+mantissa+"x10^"+str(len(mantissa))
 
-    # For positive floats, absolute value > 1
+    # For positive floats
     elif (dec > 0) and (int(dec) != dec):
         # Gets the numbers after the deciaml
         mantissa = str(dec)[str(dec).index(".")+1:]
@@ -38,7 +39,7 @@ def sciNotation( dec ):
             dec = dec // 10
         return str(dec)+"." + mantissa + "x10^" + str(len(mantissa) - startingLengthOfMantissa)
 
-    # For negative floats, absolute value > 1
+    # For negative floats
     elif (dec < 0) and (int(dec) != dec):
         dec = abs(dec)
 
@@ -65,3 +66,26 @@ def sciNotation( dec ):
     # This shouldn't happen
     else:
         return "This feature has not yet been built"
+    
+'''
+sci = sciNotation(123456789123456781234456669)
+print(sci)
+
+sci = sciNotation(-1234)
+print(sci)
+
+sci = sciNotation(1234567891789123456789.123456789)
+print(sci)
+
+sci = sciNotation(-123456789116789.123456789)
+print(sci)
+
+sci = sciNotation(.12345)
+print(sci)
+
+sci = sciNotation(-.12345)
+print(sci)
+
+sci = sciNotation(-12345.6789)
+print(sci)
+'''
