@@ -11,18 +11,22 @@ typedef struct BST{
  * Creates a new node in the Binary Search Tree, and inserts the word
  * If the word is already in the tree, then no actions are taken
  */
-void insert_BST_node(BST_node* thisNode, unsigned char* w);
+void bst_insert_node(BST_node* thisNode, unsigned char* w);
 
 /*
  * Traverses the tree, and prints each word in the tree in alphabetical order
  */
-void inorder_traverse(BST_node* thisNode);
+void bst_inorder_traverse(BST_node* thisNode);
 
+/*
+ * Searches the tree, and returns true if the word is found, false otherwise
+ */
+int bst_search( BST_node* thisNode, unsigned char* w );
 
 /*
  * IMPLEMENTATION:
  */
-void insert_BST_node(BST_node* thisNode, unsigned char* w){
+void bst_insert_node(BST_node* thisNode, unsigned char* w){
     int comparison = strcmp(thisNode->word, w);
     /*
      * comparison is:  < 0 if thisNode->word is less than w
@@ -41,7 +45,7 @@ void insert_BST_node(BST_node* thisNode, unsigned char* w){
 
         } else {
             /* recursive call, go right */
-            insert_BST_node( thisNode->right_child, w );
+            bst_insert_node( thisNode->right_child, w );
         }
     } else if( comparison > 0 ){
         /* go left */
@@ -53,16 +57,61 @@ void insert_BST_node(BST_node* thisNode, unsigned char* w){
             thisNode->left_child->left_child = NULL;
         } else {
             /* recursive call, go left */
-            insert_BST_node( thisNode->left_child, w );
+            bst_insert_node( thisNode->left_child, w );
         }
     }
 }
 
-void inorder_traverse(BST_node* thisNode){
+void bst_inorder_traverse(BST_node* thisNode){
     if( thisNode != NULL ){
-        inorder_traverse(thisNode->left_child);
+        bst_inorder_traverse(thisNode->left_child);
         puts(thisNode->word);
-        inorder_traverse(thisNode->right_child);
+        bst_inorder_traverse(thisNode->right_child);
+    }
+}
+
+int bst_search( BST_node* thisNode, unsigned char* w ){
+    int comparison = strcmp(thisNode->word, w);
+    /*
+     * comparison is:  < 0 if thisNode->word is less than w
+     *                 > 0 if thisNode->word is greater than w
+     *                == 0 if thisNode->word is equal to w
+     */
+
+    /* go right */
+    if( comparison < 0) {
+        if( thisNode->right_child == NULL ){
+            return 0;
+        /* if strcmp returns zero, then the word has been found */
+        } else if( !strcmp(thisNode->right_child->word, w) ) {
+            return 1;
+        /* else, word not found, go right */
+        } else {
+            bst_search( thisNode->right_child, w );
+        }
+    /* go left */
+    } else if ( comparison > 0 ) {
+
+        if( thisNode->left_child == NULL ){
+            return 0;
+        /* if strcmp returns zero, then the word has been found */
+        } else if( !strcmp(thisNode->left_child->word, w) ){
+            return 1;
+        /* else, word not found, go left */
+        } else {
+            bst_search( thisNode->left_child, w);
+        }
+    /* word found */
+    } else if ( comparison == 0 ){
+        return 1;
+    }
+}
+
+void bst_destroy(BST_node* thisNode){
+    if( thisNode != NULL ){
+        bst_destroy( thisNode->left_child );
+        bst_destroy( thisNode->right_child );
+        free( thisNode );
     }
 }
 #endif
