@@ -13,6 +13,7 @@ int main(void){
     t->right_child = NULL;
 
     bst_insert_node( t, "Hello");
+    bst_insert_node( t, "how");
     bst_insert_node( t, "are");
     bst_insert_node( t, "you");
     bst_insert_node( t, "this"); 
