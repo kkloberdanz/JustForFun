@@ -12,11 +12,31 @@ int main(void){
     t->left_child = NULL;
     t->right_child = NULL;
 
-    insert_BST_node( t, "Hello");
-    insert_BST_node( t, "are");
-    insert_BST_node( t, "you");
-    insert_BST_node( t, "there");
+    bst_insert_node( t, "Hello");
+    bst_insert_node( t, "are");
+    bst_insert_node( t, "you");
+    bst_insert_node( t, "this"); 
+    bst_insert_node( t, "is"); 
+    bst_insert_node( t, "a"); 
+    bst_insert_node( t, "binary"); 
+    bst_insert_node( t, "search"); 
+    bst_insert_node( t, "tree"); 
+    bst_insert_node( t, "written"); 
+    bst_insert_node( t, "in"); 
+    bst_insert_node( t, "C"); 
 
-    inorder_traverse(t);
+    char* word = "you";
+    int result = bst_search( t, word );
+
+    printf("result = %d\n", result);
+
+    if(result){
+        printf("%s, found\n", word);
+    } else {
+        printf("%s, not found\n", word);
+    }
+
+    bst_inorder_traverse(t);
+    bst_destroy( t );
     return 0;
 }
