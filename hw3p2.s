@@ -1,42 +1,24 @@
 # Homework 3 Problem 1
 # Programmer: Kyle Kloberdanz
-# File: hw3p1.s
+# File: hw3p2.s
 
     .data
-    #x:      .float 1.0
-    totalPower: .float    1.0
+    x:          .float 3.0
     newLine:    .asciiz  "\n"
-    message:    .asciiz  "Here\n"
 
     .text
 
 main:
-    ######## Used to test the functions Factorial and Power ####################
-    li.s    $f1, 3.0                # $f1: base
-    li      $t1, 4                  # $t1: exponent
-    jal Power                       # $f0: return value
 
-    mov.s $f12, $f0                 # $f12 used as argument for PrintFloat
-
-    jal PrintFloat                  # prints $f12 to screen
-
-    jal PrintNewLine                # $v0, $a0 overwritten, prints new line to screen
-
-    li      $a0, 6                  # $a0, input argument for Factorial
-    jal Factorial                   # $v0 holds return value
-
-    add $a0, $v0, $zero             # $a0, argument for PrintInt
-
-    jal PrintInt                    # print $a0 to screen 
-    ############################################################################
-
-    li.s $f2, 3.0
-    jal Exp
+    l.s $f2, x                      # loads variable x into $f2
+    jal Exp                         # $f2 contains the argument, $f4 the return value
 
     jal PrintNewLine
 
-    mov.s $f12, $f4
+    mov.s $f12, $f4                 # $f12, argument that will be printed
     jal PrintFloat
+
+    jal PrintNewLine
 
 Exit:
     li      $v0, 10                 # 10, syscall command to terminate
@@ -67,8 +49,7 @@ Power:
 # Output: $v0: stores the return value
 # Other Registers used: $sp 
 Factorial:
-    #subu $sp, $sp, 8            # move stack pointer back by 8
-    sub $sp, $sp, 8            # move stack pointer back by 8
+    sub $sp, $sp, 8             # move stack pointer back by 8
     sw $ra, ($sp)               # save return address to stack
     sw $s0, 4($sp)              # save $s0 to position after $ra
 
@@ -79,12 +60,12 @@ Factorial:
     sub  $a0, $a0, 1             # $a0 used as argument for recursive call
     jal Factorial
 
-    mul $v0, $v0, $s0           # $v0 holds the final result
+    mul $v0, $v0, $s0            # $v0 holds the final result
 
     FactorialFinished:
-        lw $ra, ($sp)           # restores return address
-        lw $s0, 4($sp)          # restores $s0
-        addi $sp, $sp, 8        # repositions stack pointer
+        lw $ra, ($sp)            # restores return address
+        lw $s0, 4($sp)           # restores $s0
+        addi $sp, $sp, 8         # repositions stack pointer
 
         jr $ra
 #### End of subroutine: Factorial ####
@@ -98,9 +79,9 @@ Exp:
     sw $ra, ($sp)               # save return address to stack
 
 
-    li.s $f4, 1.0                     # holds the total that will be returned
-    li   $t0, 1                       # increment
-    li   $t2, 10                      # upperbound for increment
+    li.s $f4, 1.0               # holds the total that will be returned
+    li   $t0, 1                 # increment
+    li   $t2, 10                # upperbound for increment
 
 
 
@@ -121,17 +102,13 @@ Exp:
 
             mtc1 $v0, $f8                    # move the int in $v0 to $f8
             cvt.s.w $f8, $f8                 # convert the int in $f8 to a float
-            div.s $f6, $f0, $f8              # TODO: Move $a0 to floating point register, perform $f0 / $a0
+            div.s $f6, $f0, $f8              # divides $f0 by $f8, saved in $f6
 
             add.s $f4, $f4, $f6              # $f6 contains the result of power / factorial
 
             addi $t0, $t0, 1                 # i++
             blt  $t0, $t2, whileLoop         # while i < 10
     
-    # TESTING
-    mov.s $f12, $f4
-    jal PrintFloat
-
     lw $ra, ($sp)                            # Restores return address
     addi $sp, $sp, 4                         # repositions stack pointer
     jr $ra                                   # Return to main
@@ -145,10 +122,6 @@ PrintInt:
     li      $v0, 1                  # 1, syscall command for print int; a0 holds int to print
     syscall
 
-;    li     $v0, 4                   # 4, syscall command for print string
-    ;la     $a0, newLine
-    ;syscall
-
     jr $ra
 
 # Input:  $f12: float to print
@@ -157,17 +130,18 @@ PrintFloat:
     li      $v0, 2                  # 2, syscall for print float; $f12 holds float to print
     syscall
     
- ;   li     $v0, 4                   # 4, syscall command for print string
-    ;la     $a0, newLine
-    ;syscall
     jr $ra
 
+# input: none
+# output: none
 PrintNewLine:
     li     $v0, 4                   # 4, syscall command for print string
     la     $a0, newLine
     syscall
     jr     $ra
 
+# input: none
+# output: none
 PrintMessage:
     li $v0, 4
     la $a0, message
