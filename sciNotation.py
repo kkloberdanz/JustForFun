@@ -28,7 +28,7 @@ def sciNotation( dec ):
         return "-"+str(dec)+"."+mantissa+"x10^"+str(len(mantissa))
 
     # For positive floats
-    elif (dec > 0) and (int(dec) != dec):
+    elif (dec >= 1) and (int(dec) != dec):
         # Gets the numbers after the deciaml
         mantissa = str(dec)[str(dec).index(".")+1:]
 
@@ -40,7 +40,7 @@ def sciNotation( dec ):
         return str(dec)+"." + mantissa + "x10^" + str(len(mantissa) - startingLengthOfMantissa)
 
     # For negative floats
-    elif (dec < 0) and (int(dec) != dec):
+    elif (dec <= -1) and (int(dec) != dec):
         dec = abs(dec)
 
         # Gets the numbers after the deciaml
@@ -55,10 +55,20 @@ def sciNotation( dec ):
 
     # Floats abs < 1
     elif (abs(dec) < 1) and (dec > 0):
-        return str(dec) + "x10^0"
+        dec = str(dec)
+        mantissa = dec[ dec.index("."): ]
+        exp = str(len(mantissa) - 1)
+        dec = dec[2:]
+        while dec[0] == '0':
+            dec = dec[1:]
+        dec = dec[0]
+        mantissa = mantissa[1:]
+        while mantissa[0] == '0':
+            mantissa = mantissa[1:]
+        mantissa = mantissa[1:]
+        return dec + '.' + mantissa + "x10^-" + exp
     elif (abs(dec) < 1) and (dec < 0):
-        return "-" + str(dec) + "x10^0"
-
+        return dec
     # For zero
     elif dec == 0:
         return 0
@@ -88,4 +98,8 @@ print(sci)
 
 sci = sciNotation(-12345.6789)
 print(sci)
+
+print(sciNotation(0.9))
+print(sciNotation(0.0009003450))
+print(sciNotation(-0.00009))
 '''
