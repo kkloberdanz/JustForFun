@@ -9,6 +9,7 @@ filetype plugin indent on
 " Colorful text
 syntax on
 
+" uncomment to show number lines
 "set number
 
 "-------- Indentation ----------
@@ -37,6 +38,12 @@ map E $
 
 " move to begining of line
 map B ^
+
+" navegate between windows using Ctrl (h,j,k,l)
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 "------------------------------ 
 
 " Enables use of mouse
