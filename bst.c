@@ -8,9 +8,11 @@
 int main(void){
 
     BST_node* t = malloc( sizeof(BST_node) );
-    t->word = "";
-    t->left_child = NULL;
-    t->right_child = NULL;
+    //t->word = "";
+    //t->left_child = NULL;
+    //t->right_child = NULL;
+
+    bst_initialize( t );
 
     bst_insert_node( t, "Hello");
     bst_insert_node( t, "how");
@@ -25,6 +27,7 @@ int main(void){
     bst_insert_node( t, "written"); 
     bst_insert_node( t, "in"); 
     bst_insert_node( t, "C"); 
+    bst_insert_node( t, "Enjoy!"); 
 
     char* word = "you";
     int result = bst_search( t, word );
