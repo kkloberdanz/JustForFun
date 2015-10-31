@@ -1,0 +1,9 @@
+wpa_cli
+scan
+scan_results
+add_network
+set_network 0 ssid "networkName"
+set_network 0 psk "networkPassword"
+enable_network 0
+save_config
+quit
