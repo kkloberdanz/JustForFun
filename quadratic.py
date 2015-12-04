@@ -8,7 +8,7 @@ Directions:
             This is a program that reads in a quadratic formula 
             like this './quadratic 12x^2 - 100x + 20000'
             and returns the solutions to x
-            (Ensure there are spaces between '-' and coeficcients)
+            (Ensure there are spaces between '+' and coeficcients)
             
             Plus signs are implied, and are not needed
             This program only accepts integers 
