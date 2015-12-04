@@ -33,8 +33,8 @@ def squareRoot(s,e = 0):
     sqrt = s
 
     while( abs(guess - sqrt) > e):
-            guess = sqrt
-            sqrt = (guess + (s/guess))/2
+        guess = sqrt
+        sqrt = (guess + (s/guess))/2
     return (sqrt)
 
 a = 0
