@@ -3,16 +3,15 @@
 """
 Programmer: Kyle Kloberdanz
 Date      : 2 Dec 2015
-            
 
 Directions: 
-
             This is a program that reads in a quadratic formula 
             like this './quadratic 12x^2 - 100x + 20000'
             and returns the solutions to x
+            (Ensure there are spaces between '-' and coeficcients)
             
             Plus signs are implied, and are not needed
-            This program only accepts integers
+            This program only accepts integers 
 """
 
 import sys
@@ -59,23 +58,32 @@ for item in equation:
         nextItemIsNegative = True
 
     elif "x^2" in item:
-        a = int(item[0:item.index('x')])
-        if nextItemIsNegative:
-            aIsNegative = True
-            nextItemIsNegative = False
+        if item[0] == 'x':
+            a = 1
+        else:
+            a = int(item[0:item.index('x')])
+            if nextItemIsNegative:
+                aIsNegative = True
+                nextItemIsNegative = False
 
     elif "x" in item:
-        b = int(item[0:item.index('x')])
-        if nextItemIsNegative:
-            bIsNegative = True
-            nextItemIsNegative = False
+        if item[0] == 'x':
+            b = 1
+        else:
+            b = int(item[0:item.index('x')])
+            if nextItemIsNegative:
+                bIsNegative = True
+                nextItemIsNegative = False
 
     elif "x" not in item and item != "+":
         # constant term
-        c = int(item)
-        if nextItemIsNegative:
-            cIsNegative = True
-            nextItemIsNegative = False
+        if item[0] == 'x':
+            b = 1
+        else:
+            c = int(item)
+            if nextItemIsNegative:
+                cIsNegative = True
+                nextItemIsNegative = False
 
 if aIsNegative:
     a = -1 * a
