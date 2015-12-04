@@ -17,8 +17,7 @@ Directions:
 import sys
 
 # I'm using my implementation of squareRoot rather than the math library
-# because I plan to implement non-real solutions in the future, and this
-# implementation of square root can deal with imaginary numbers
+# because this program can also solve for complex/imaginary solutions
 def squareRoot(s,e = 0):
     '''
     Title: squareRoot
