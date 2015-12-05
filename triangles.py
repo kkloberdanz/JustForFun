@@ -7,7 +7,6 @@
 #                 then type 'python3 triangles.py'    
 
 import time
-from time import sleep
 import shutil
 
 
