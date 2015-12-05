@@ -22,27 +22,27 @@ while x < 10000:
     while i < SIZE:
         time.sleep(DELAY)
         while j < i:        
-                time.sleep(DELAY)
-                print(j * "*")
-                j += 1
+            time.sleep(DELAY)
+            print(j * "*")
+            j += 1
 
         while j > 0:
-                time.sleep(DELAY)
-                print(j * "*")
-                j -= 1
+            time.sleep(DELAY)
+            print(j * "*")
+            j -= 1
         i += 1
 
     while i > 0:
         time.sleep(DELAY)
         while j < i:        
-                time.sleep(DELAY)
-                print(j * "*")
-                j += 1
+            time.sleep(DELAY)
+            print(j * "*")
+            j += 1
 
         while j > 0:
-                time.sleep(DELAY)
-                print(j * "*")
-                j -= 1
+            time.sleep(DELAY)
+            print(j * "*")
+            j -= 1
 
         i -= 1
     
