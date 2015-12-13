@@ -357,3 +357,11 @@ def display(facilities, data):
     f.write('</Document></kml>')
     f.close()
     # End of function "Display"
+    
+# Main
+# Run with python3
+# This program outputs a file called 'visualization800.kml'
+data = createDataStructure()
+facilities = locateFacilities(data, 800)
+display(facilities, data)
+
