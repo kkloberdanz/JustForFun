@@ -11,17 +11,17 @@
 #include <stdbool.h>
 
 int main( int argc, char* argv[] ){
-    const numArgs = 3;
+    const int numArgs = 3;
     while( true ){
         if( argc == numArgs ){
             /* atoi takes a string a returns an int */
             system(argv[2]);
             sleep( atoi(argv[1]) );
         } else if( argc < numArgs ){
-            puts( "Error in program: every, not enough input arguments" );
+            puts( "every: not enough input arguments" );
             return 1;
         } else if( argc > numArgs ){
-            puts( "Error in program: every, too many input arguments" );
+            puts( "every: too many input arguments" );
             return 1;
         }
     }
