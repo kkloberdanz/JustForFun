@@ -1,4 +1,8 @@
-# Programmer: Kyle Kloberdanz
+# Programmer : Kyle Kloberdanz
+# Description: Edit the return value in 'myFunction' to an expression you
+#              wish to integrate
+
+import math
 
 def myFunction(x):
     return math.exp(x ** 2)
@@ -35,10 +39,17 @@ def simpsonsRule(a, b):
 
 ###### Begin Main ######
 
-import math
 
-a = int(input("Please enter the lower bound of integration: "))
-b = int(input("Please enter the upper bound of integration: "))
+a = int(input("Lower bound: "))
+b = int(input("Upper bound: "))
+
+if a > b:
+    print("You entered the bounds in the wrong order, this has been corrected")
+    tmp = a
+    a = b
+    b = tmp
+
 ans = simpsonsRule(a, b)
 
 print(ans)
+
