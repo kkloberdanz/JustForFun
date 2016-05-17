@@ -2,7 +2,7 @@
  * Programmer: Kyle Kloberdanz
  * Date Created: 17 May 2016
  *
- * Description: An apptempt at making a somewhat generic doubly linked 
+ * Description: An attempt at making a somewhat generic doubly linked 
  *              list. Tested with valgrind, no memory leaks possible
  */
 
