@@ -1,7 +1,7 @@
 /*
  * Program : every.cpp
  * Author  : Kyle Kloberdanz
- * Date    : Created: 7 Sep 2015
+ * Date    : Created: 16 Jul 2016
  *
  * Input Arguments: delay (in seconds), command 
  */
