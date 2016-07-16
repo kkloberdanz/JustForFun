@@ -4,6 +4,7 @@
  * Date    : Created: 16 Jul 2016
  *
  * Input Arguments: delay (in seconds), command 
+ * Hint           : It is best to put paths with spaces in quotes ""
  */
 
 #include <iostream>
@@ -14,9 +15,8 @@
 bool is_valid_wait_time(const char*);
 
 int main( int argc, char* argv[] ){ 
-    int i = argc;
     std::string command_string;
-    for (i = 2; i < argc; i++) {
+    for (int i = 2; i < argc; i++) {
         std::string cpp_string = argv[i];
         command_string += cpp_string + ' ';
     }
