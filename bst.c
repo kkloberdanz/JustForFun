@@ -42,5 +42,6 @@ int main(void){
 
     bst_inorder_traverse(t);
     bst_destroy( t );
+
     return 0;
 }
