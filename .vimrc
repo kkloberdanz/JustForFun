@@ -8,10 +8,28 @@ filetype plugin indent on
 
 " Colorful text
 syntax on
+highlight Comment ctermfg=green
 
+"Highlight those evil, evil tabs!
+syntax match tab "[\t]"
+highlight tab guibg=Red ctermbg=2
+
+"Show line at column 80
+set colorcolumn=80
+
+set spell
+
+" Highlight search term
+set hlsearch
+
+<<<<<<< HEAD
+" uncomment to show number lines
+set number
+=======
 " Show number lines
 set number
 "set relativenumber
+>>>>>>> 3d412ac582c7e64b08782eeb3342e7c125300983
 
 "-------- Indentation ----------
 set tabstop=4
