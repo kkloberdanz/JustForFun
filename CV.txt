@@ -1,0 +1,57 @@
+﻿/*
+ * Kyle Kloberdanz
+ * kyle.g.kloberdanz@gmail.com
+ * github.com/kkloberdanz
+ * 319 429 1721 
+ */
+
+Education:
+    The University of Iowa                                          August 2012	
+    Major: Computer Science (B.S.)                              - December 2016
+
+Work Experience: 
+    C++ Developer – University of Iowa:                             August 2016
+        See M3BIRFinder                                         - November 2016
+    
+    Research Assistant – University of Iowa                            May 2016
+        Using Python and C++, wrote programs to webscrape,        - August 2016
+        collect data, and generate graphs and csv files for 
+        a project that analyzes Latin texts
+
+    IT Support - University of Iowa:                                 March 2015
+        Providing IT services for the College of Public Health    - August 2016
+        Working with Windows systems 
+
+    Engineering Math and Circuits Tutor – University of Iowa     September 2013 
+        Teaching Calculus and electronic circuitry to           - December 2014
+        engineering majors.
+
+Computer Skills:
+    * Languages: C++ (C++11, STL), C, Python, Java, F#
+    * Multithreading
+    * Linux geek (Fedora, Debian, Ubuntu, Raspbian, CentOS) 
+    * Experienced working in IT support
+    * Git
+    * Vim!
+
+Group Work:
+    * Leader of a group on an iOS app using swift 
+    * Previously worked under a desktop support manager for the 
+      College of Public Health, and trained new employees 
+    * Programmer for a professor working on a digital humanities project 
+    * Programmer for a Biology Professor working on an open-source 
+      multithreaded C++ program that analyzes DNA 
+    * Git master for a team of 7 for a warehouse simulator built in Java
+
+Projects:
+    M3BIRFinder (C++):
+        Multithreaded Microhomology Mediated Break Induced
+        Replication Finder, or M3BIRFinder A fork of MMBIRFinder, 
+        a bioinformatics tool to detect MMBIR events Worked with 
+        Prof. Anna Malkova as a contractor to fork MMBIRFinder 
+        and make it multithreaded in order to improve performance.
+
+    Finance Tracker App (iOS - Swift):
+        An app that tracks a person's finances,
+        saves receipts, and generates graphs based on spending
+
