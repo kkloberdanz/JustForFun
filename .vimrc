@@ -22,14 +22,12 @@ set spell
 " Highlight search term
 set hlsearch
 
-<<<<<<< HEAD
 " uncomment to show number lines
 set number
-=======
+
 " Show number lines
 set number
 "set relativenumber
->>>>>>> 3d412ac582c7e64b08782eeb3342e7c125300983
 
 "-------- Indentation ----------
 set tabstop=4
