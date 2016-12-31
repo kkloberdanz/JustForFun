@@ -10,10 +10,10 @@ Education:
     Major: Computer Science (B.S.)                              - December 2016
 
 Work Experience: 
-    C++ Developer – University of Iowa:                             August 2016
+    C++ Developer - University of Iowa:                             August 2016
         See M3BIRFinder                                         - November 2016
     
-    Research Assistant – University of Iowa                            May 2016
+    Research Assistant - University of Iowa                            May 2016
         Using Python and C++, wrote programs to webscrape,        - August 2016
         collect data, and generate graphs and csv files for 
         a project that analyzes Latin texts
@@ -22,7 +22,7 @@ Work Experience:
         Providing IT services for the College of Public Health    - August 2016
         Working with Windows systems 
 
-    Engineering Math and Circuits Tutor – University of Iowa     September 2013 
+    Engineering Math and Circuits Tutor - University of Iowa     September 2013 
         Teaching Calculus and electronic circuitry to           - December 2014
         engineering majors.
 
